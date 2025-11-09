@@ -1,0 +1,74 @@
+name: "🐛 Bug Report"
+description: 报告一个 Bug
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你花时间填写这个 Bug 报告！
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: 描述 Bug
+      description: 清晰简洁地描述这个 Bug 是什么
+      placeholder: 我在使用 xxx 功能时，期望的行为是 xxx，但实际发生了 xxx
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: 重现步骤
+      description: 如何重现这个问题？
+      placeholder: |
+        1. 运行命令 `npm create @bitbitdown/mini-vite my-app`
+        2. 选择 Vue + TypeScript
+        3. 看到错误 xxx
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: 期望的行为
+      description: 你期望发生什么？
+      placeholder: 应该成功创建项目
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: 实际的行为
+      description: 实际上发生了什么？
+      placeholder: 报错了，错误信息是 xxx
+
+  - type: textarea
+    id: system-info
+    attributes:
+      label: 系统信息
+      description: 请提供你的系统信息
+      placeholder: |
+        - OS: Windows 11 / macOS 14 / Ubuntu 22.04
+        - Node.js: v20.11.0
+        - npm: 10.2.4
+        - 包版本: @bitbitdown/mini-create-vite@1.0.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 补充信息
+      description: 其他任何有助于解决问题的信息
+      placeholder: 截图、日志等
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 检查清单
+      description: 在提交之前，请确认以下事项
+      options:
+        - label: 我已经搜索过类似的 Issue，没有找到重复的
+          required: true
+        - label: 我已经提供了足够的信息来重现这个问题
+          required: true

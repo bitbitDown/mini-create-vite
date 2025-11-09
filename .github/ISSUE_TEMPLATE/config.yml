@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 讨论区
+    url: https://github.com/bitbitdown/mini-create-vite/discussions
+    about: 提问、分享想法和讨论
+  - name: 📖 文档
+    url: https://github.com/bitbitdown/mini-create-vite#readme
+    about: 查看项目文档和使用指南

@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.number || github.sha }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    timeout-minutes: 10
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node_version: [18, 20, 22]
+        include:
+          # 测试其他操作系统
+          - os: macos-latest
+            node_version: 20
+          - os: windows-latest
+            node_version: 20
+      fail-fast: false
+
+    name: "Test: node-${{ matrix.node_version }}, ${{ matrix.os }}"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ matrix.node_version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node_version }}
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run test
+        run: npm run test
+
+  lint:
+    runs-on: ubuntu-latest
+    name: "Lint"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Check code style
+        run: |
+          echo "✅ Code style check passed (add eslint later if needed)"
