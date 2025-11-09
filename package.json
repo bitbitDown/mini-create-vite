@@ -1,0 +1,45 @@
+{
+  "name": "@bitbitdown/mini-create-vite",
+  "version": "1.0.0",
+  "description": "A minimal Vite-like CLI scaffolding tool",
+  "type": "module",
+  "bin": {
+    "mini-vite": "index.js",
+    "create-mini-vite": "index.js"
+  },
+  "files": [
+    "index.js",
+    "plugins",
+    "template-*"
+  ],
+  "scripts": {
+    "test": "node index.js test-app",
+    "prepublishOnly": "npm run test"
+  },
+  "keywords": [
+    "vite",
+    "cli",
+    "scaffolding",
+    "template",
+    "vue",
+    "react",
+    "typescript"
+  ],
+  "author": "bitbitdown",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bitbitdown/mini-create-vite.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bitbitdown/mini-create-vite/issues"
+  },
+  "homepage": "https://github.com/bitbitdown/mini-create-vite#readme",
+  "engines": {
+    "node": "^18.0.0 || >=20.0.0"
+  },
+  "dependencies": {
+    "picocolors": "^1.1.1",
+    "prompts": "^2.4.2"
+  }
+}
