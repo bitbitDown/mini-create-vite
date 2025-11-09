@@ -1,6 +1,6 @@
 {
   "name": "@bitbitdown/mini-create-vite",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A minimal Vite-like CLI scaffolding tool",
   "type": "module",
   "bin": {
