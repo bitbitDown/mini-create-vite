@@ -1,7 +1,7 @@
 # Dependabot 配置 - 自动更新依赖
 version: 2
 updates:
-  # npm 依赖更新
+  # 主项目 npm 依赖更新
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
@@ -11,6 +11,50 @@ updates:
       - "dependencies"
     commit-message:
       prefix: "chore(deps)"
+
+  # Vue 模板依赖更新
+  - package-ecosystem: "npm"
+    directory: "/template-vue"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "template"
+    commit-message:
+      prefix: "chore(template)"
+
+  # Vue TS 模板依赖更新
+  - package-ecosystem: "npm"
+    directory: "/template-vue-ts"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "template"
+    commit-message:
+      prefix: "chore(template)"
+
+  # React 模板依赖更新
+  - package-ecosystem: "npm"
+    directory: "/template-react"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "template"
+    commit-message:
+      prefix: "chore(template)"
+
+  # React TS 模板依赖更新
+  - package-ecosystem: "npm"
+    directory: "/template-react-ts"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "template"
+    commit-message:
+      prefix: "chore(template)"
 
   # GitHub Actions 更新
   - package-ecosystem: "github-actions"

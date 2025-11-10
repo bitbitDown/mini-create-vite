@@ -1,0 +1,13 @@
+# Ignore templates when giving context to Copilot
+template-*/**
+
+# Ignore build artifacts
+node_modules/
+dist/
+
+# Ignore generated files
+package-lock.json
+
+# Ignore documentation
+*.md
+!README.md

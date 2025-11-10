@@ -1,0 +1,22 @@
+# <type>(<scope>): <subject>
+# 
+# <body> (optional)
+# 
+# Types:
+#   feat:     new feature
+#   fix:      bug fix
+#   docs:     documentation
+#   style:    formatting
+#   refactor: refactoring
+#   perf:     performance
+#   test:     testing
+#   chore:    build/deps
+#   ci:       CI/CD
+# 
+# Scopes:
+#   plugin, template, deps, cli, ci, docs
+# 
+# Examples:
+#   feat(plugin): add Prettier plugin support
+#   fix(template): fix missing dependencies in React template
+#   chore(deps): upgrade Vite to 7.2.2
