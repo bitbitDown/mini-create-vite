@@ -6,71 +6,66 @@
 
 Quickly create Vue/React projects with TypeScript support and optional plugins (ESLint, Tailwind CSS, UnoCSS).
 
-## Quick Start
+## Installation & Usage
+
+### Option 1: npx (Recommended)
 
 ```bash
-# Run the scaffolding tool
-node index.js
-
-# Or specify project name
-node index.js my-app
+npx @bitbitdown/mini-create-vite
 ```
 
-Follow the prompts to select:
+### Option 2: Global Installation
 
-1. Framework (Vue / React)
-2. Language (TypeScript / JavaScript)
-3. Plugins (ESLint / Tailwind CSS / UnoCSS)
-
-## Supported Templates
-
-- **Vue 3** + TypeScript / JavaScript
-- **React 18** + TypeScript / JavaScript
-
-## Optional Plugins
-
-### ESLint
-
-- Based on [@antfu/eslint-config](https://github.com/antfu/eslint-config)
-- Auto-detects TypeScript, React, Vue
-- Built-in Prettier formatting
-
-### Tailwind CSS v4
-
-- Uses `@tailwindcss/vite` plugin
-- No `tailwind.config.js` needed
-- [Official Docs](https://tailwindcss.com/docs/installation/using-vite)
-
-### UnoCSS
-
-- Instant on-demand atomic CSS engine
-- Better performance than Tailwind
-
-> ⚠️ Choose either Tailwind CSS or UnoCSS, not both
-
-## Project Structure
-
-```
-mini-create-vite/
-├── index.js              # Main entry
-├── package.json
-├── plugins/              # Plugin system
-│   ├── eslint.js
-│   ├── tailwind.js
-│   └── unocss.js
-├── template-vue-ts/      # Vue + TS template
-├── template-vue/         # Vue + JS template
-├── template-react-ts/    # React + TS template
-└── template-react/       # React + JS template
+```bash
+npm install -g @bitbitdown/mini-create-vite
+mini-vite
 ```
 
-## Usage Examples
+## How to Use
+
+After running the command, follow the prompts:
+
+1. **Enter project name** - e.g., `my-app`
+2. **Select framework** - Vue / React
+3. **Select language** - TypeScript / JavaScript
+4. **Select plugins** (optional) - ESLint / Tailwind CSS / UnoCSS
+
+After creation:
+
+```bash
+cd my-app
+npm install
+npm run dev
+```
+
+## Features
+
+### Supported Framework Templates
+
+- **Vue 3.5** + TypeScript / JavaScript
+- **React 18.3** + TypeScript / JavaScript
+
+### Optional Plugins
+
+| Plugin | Description |
+|--------|-------------|
+| **ESLint** | Based on [@antfu/eslint-config](https://github.com/antfu/eslint-config), auto-detects project type |
+| **Tailwind CSS v4** | Uses `@tailwindcss/vite` plugin, no config file needed |
+| **UnoCSS** | Instant on-demand atomic CSS engine, better performance |
+
+> ⚠️ Cannot use Tailwind CSS and UnoCSS together
+
+## Complete Examples
 
 ### Create Vue + TypeScript Project
 
 ```bash
-node index.js my-vue-app
-# Select: Vue → TypeScript → ESLint + Tailwind
+npx @bitbitdown/mini-create-vite
+
+# Follow the prompts:
+# ✓ Project name: my-vue-app
+# ✓ Select a framework: vue-ts
+# ✓ Select plugins: ESLint, Tailwind CSS
 
 cd my-vue-app
 npm install
@@ -80,39 +75,41 @@ npm run dev
 ### Create React + JavaScript Project
 
 ```bash
-node index.js my-react-app
-# Select: React → JavaScript → ESLint
+npx @bitbitdown/mini-create-vite
+
+# Follow the prompts:
+# ✓ Project name: my-react-app
+# ✓ Select a framework: react
+# ✓ Select plugins: ESLint
 
 cd my-react-app
 npm install
 npm run dev
 ```
 
-## Tech Stack
+## Related Links
 
-- **Core Dependencies**
-  - [prompts](https://github.com/terkelg/prompts) - Interactive command line
-  - [picocolors](https://github.com/alexeyraspopov/picocolors) - Terminal colors
-
-- **Framework Versions**
-  - Vue: 3.5.13
-  - React: 18.3.1
-  - Vite: 6.0.5
-  - TypeScript: 5.6.2
-
-## Documentation
-
-- [PLUGIN_SYSTEM.md](./PLUGIN_SYSTEM.md) - Plugin System
+- [Plugin System Documentation](./PLUGIN_SYSTEM.md)
+- [npm Package](https://www.npmjs.com/package/@bitbitdown/mini-create-vite)
+- [GitHub Repository](https://github.com/bitbitdown/mini-create-vite)
 
 ## Roadmap
 
-Extend plugins to support Husky, CI/CD configurations, and more.
+- [ ] Husky support (Git hooks)
+- [ ] CI/CD configuration templates
+- [ ] More framework support
+
+## Acknowledgments
+
+Inspired by [create-vite](https://github.com/vitejs/vite/tree/main/packages/create-vite)
 
 ## License
 
 MIT
 
-## Acknowledgments
+---
+
+**If this helps you, welcome to Star ⭐️**
 
 Inspired by [create-vite](https://github.com/vitejs/vite/tree/main/packages/create-vite)
 
